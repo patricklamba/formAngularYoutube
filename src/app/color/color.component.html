@@ -1,0 +1,30 @@
+<!--ProcessEvent allow to process the event-->
+<app-fils (sendRequestToData)="processReq($event)" [filsProperty] = "color" ></app-fils>
+
+<!--
+here we see :
+- property binding with
+-->
+<div [style.backgroundColor] = "color">
+  Color
+</div>
+<!--input color is an identifier of the input  tag
+here we see event binding with chang event and the call of changeColor
+how to identify a dom element (inputColor) and use it on ChangeColor(inputColor)
+-->
+<!--<input #inputColor (change)="changeColor(inputColor)" type="text" class="form-control">-->
+
+<!--2 way data binding with the use of NgModel
+it's working like input becomes the color properties if I change the color properties the input change if I change
+what is inside the input the color change
+don't forget to add FormsModule in the inports of the app.module.ts so that you can use ngModel
+-->
+<input [(ngModel)]="color"
+  type="text"
+  class="form-control"
+>
+
+what is inside the color property is {{ color }}
+
+
+
